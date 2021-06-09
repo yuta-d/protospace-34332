@@ -54,8 +54,10 @@ class PrototypesController < ApplicationController
   end
 
   def move_to_root_path
-    unless
       redirect_to root_path
+      unless 
+        current_user == @prototype.user
+      end
     end
   end
 end
